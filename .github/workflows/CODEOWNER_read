@@ -40,6 +40,6 @@ jobs:
     
     - name: Run step if any files not required have been deleted
       run: |
-        action_test=$(python3 ../read_CODEOWNER.py)
+        action_test=$(python3 read_CODEOWNER.py)
         echo "$action_test was completed"
         
