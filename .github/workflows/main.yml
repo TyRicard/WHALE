@@ -37,8 +37,9 @@ jobs:
         files: |
           build.sbt
           project/plugins.sbt
-
+    
     - name: Run step if any files not required have been deleted
+      if: steps.required-files.outputs.other_deleted_files == 'true'
       run: |
-        action_test=$(python3 read_CODEOWNER.py)
+        action_test=$(python3 scripts/read_CODEOWNER.py)
         echo "$action_test was completed"
