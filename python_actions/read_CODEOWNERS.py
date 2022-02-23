@@ -14,6 +14,7 @@ def main():
     file_str = os.getenv('INPUT_FILES')
     files = file_str.split('|')
     files = files[1:]
+    print(files)
     r = open("/CI_CODEOWNERS", "r")
 
     for file_name in files:
