@@ -7,7 +7,7 @@ import re
 def main():
     args = sys.argv[1:]
     output = []
-    f = open("../.github/CODEOWNERS", "w")
+    f = open(".github/CODEOWNERS", "w")
 
     for file_name in args:
         pattern = re.compile(file_name)
