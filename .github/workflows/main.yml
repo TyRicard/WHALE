@@ -26,10 +26,6 @@ jobs:
       with:
           fetch-depth: 0
 
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
     - name: Get Files that cannot be deleted
       id: required-files
       uses: tj-actions/changed-files@v16
@@ -40,6 +36,7 @@ jobs:
     
     - name: Run step if any files not required have been deleted
       if: steps.required-files.outputs.only_deleted == 'false'
-      run: |
-        python3 scripts/read_CODEOWNER.py ${{steps.required-files.outputs.other_deleted_files}}
-        cat NEED_UPDATE_CODEOWNER_FILES
+      uses: ./python_actions@TyRicard-patch-1
+      with:
+        FILE_ARRAY: ${{steps.required-files.outputs.other_deleted_files}}
+        
