@@ -39,7 +39,7 @@ jobs:
       run: |
         a=""
         for file_name in ${{ steps.required-files.outputs.other_deleted_files }}; do
-          a="{a}|{file_name}"
+          a="${a}|${file_name}"
           echo "${a}" 
         done
 
