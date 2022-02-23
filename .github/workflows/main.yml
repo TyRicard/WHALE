@@ -51,8 +51,9 @@ jobs:
         a=""
         for file_name in ${{ steps.required-files.outputs.other_deleted_files }}; do
           a="${a}|${file_name}"
-          echo "${a}" 
+          echo "${a}"
         done
+        echo "${{github.event.push.commits}"
         echo "::set-output name=file_list::${a}"
 
     - name: Find if Deleted Files are in CODEOWNERS
@@ -68,7 +69,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FILE_MESSAGE: ${{steps.declared-files.outputs.deletion_list}}
         COMMIT_URL: ${{github.event.push.compare}}
-        COMMIT_TIME: ${{github.event.push.commits[][timestamp]}}
+        COMMIT_TIME: ${{github.event.push.commits}
       with:
         update_existing: false
         
