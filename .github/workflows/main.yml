@@ -60,7 +60,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FILE_MESSAGE: ${{steps.declared-files.outputs.deletion_list}}
-        COMMIT_URL: ${{github.event.push.compare}}
+        COMMIT_URL: ${{github.event.compare}}
       with:
         update_existing: false
         search_existing: open
