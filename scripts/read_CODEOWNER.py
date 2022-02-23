@@ -8,8 +8,7 @@ def main():
     args = sys.argv[1:]
     output = []
     r = open(".github/CODEOWNERS", "r")
-    x = open(".github/temp_file.txt", "x")
-    w = open(".github/temp_file.txt", "w")
+    w = open(".github/NEED_UPDATE_CODEOWNER_FILES", "w")
 
     for file_name in args:
         pattern = re.compile(file_name)
