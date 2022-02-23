@@ -9,4 +9,4 @@ FROM python:3.8-slim-buster
 COPY read_CODEOWNERS.py /read_CODEOWNERS.py
 COPY CI_CODEOWNERS /CODEOWNERS
 
-CMD ["python", "/read_CODEOWNERS.py", ${INPUT_FILES}]
+CMD ["/read_CODEOWNERS.py", ${INPUT_FILES}]
