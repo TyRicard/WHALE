@@ -7,20 +7,23 @@ import re
 def main():
     args = sys.argv[1:]
     output = []
-    print("Does this happen")
-    f = open(".github/CODEOWNERS", "r")
+    r = open(".github/CODEOWNERS", "r")
+    x = open(".github/temp_file.txt", "x")
+    w = open(".github/temp_file.txt", "w")
 
     for file_name in args:
         pattern = re.compile(file_name)
-        lines = f.readlines()
+        lines = r.readlines()
 
         for l in lines:
             if pattern.match(l) is not None:
                 output.append(file_name)
                 break
-                
-    f.close()
-    return output
+
+    w.write(output)           
+    r.close()
+    w.close()
+    return
 
 if __name__ == "__main__":
     main()

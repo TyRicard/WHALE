@@ -41,5 +41,4 @@ jobs:
     - name: Run step if any files not required have been deleted
       if: steps.required-files.outputs.only_deleted == 'false'
       run: |
-        action_test= python3 scripts/read_CODEOWNER.py ${{steps.required-files.outputs.other_deleted_files}}
-        echo "$action_test was completed"
+        echo python3 scripts/read_CODEOWNER.py ${{steps.required-files.outputs.other_deleted_files}}
