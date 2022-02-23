@@ -34,12 +34,9 @@ jobs:
           build.sbt
           project/plugins.sbt
     
-    - name: Checkout the Necessary action
-      uses: actions/checkout@v1
-    
     - name: Run step if any files not required have been deleted
       if: steps.required-files.outputs.only_deleted == 'false'
-      uses: ./python_actions@TyRicard-patch-1
+      uses: ./python_actions
       with:
         FILE_ARRAY: ${{steps.required-files.outputs.other_deleted_files}}
         
