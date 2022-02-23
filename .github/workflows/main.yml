@@ -53,7 +53,7 @@ jobs:
           a="${a}|${file_name}"
           echo "${a}"
         done
-        echo "${{github.event.push.commits}"
+        echo "${{github.event.push.commits}}"
         echo "::set-output name=file_list::${a}"
 
     - name: Find if Deleted Files are in CODEOWNERS
