@@ -12,19 +12,16 @@ import os
 def main():
     output = []
     file_str = os.getenv('INPUT_FILES')
-    print(file_str)
-    files = file_str.split('|')[1:]
-    print(files)
-    r = open(".github/CODEOWNERS", "r")
+    files = file_str.split('|')
+    files = files[1:]
+    r = open("/CI_CODEOWNERS", "r")
 
     for file_name in files:
         pattern = re.compile(file_name)
         lines = r.readlines()
 
         for l in lines:
-            print(l)
             if pattern.match(l) is not None:
-                print(output)
                 output.append(file_name)
                 break
      
