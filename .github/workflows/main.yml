@@ -68,8 +68,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FILE_MESSAGE: ${{steps.declared-files.outputs.deletion_list}}
-        COMMIT_URL: ${{github.event.push.compare}}
-        COMMIT_TIME: ${{github.event.push.commits}}
+        COMMIT_URL: ${{github.event.pull_request.compare}}
+        COMMIT_TIME: ${{github.event.pull_request.commits}}
       with:
         update_existing: false
         
