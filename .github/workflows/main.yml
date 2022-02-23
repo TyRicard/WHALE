@@ -53,4 +53,11 @@ jobs:
       uses: ./python_actions
       with: 
         FILES: ${{steps.string-files.outputs.file_list}}
+
+    
+    - name: If deleted files exist, create issue
+      id: declared-files
+      if: steps.required-files.outputs.only_deleted == 'false'
+      run:
+        echo "${{steps.declared-files.outputs.deletion_list}}"
         
