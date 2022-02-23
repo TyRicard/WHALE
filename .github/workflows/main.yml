@@ -38,5 +38,5 @@ jobs:
       if: steps.required-files.outputs.only_deleted == 'false'
       uses: ./python_actions
       with:
-        FILE_ARRAY: ${{steps.required-files.outputs.other_deleted_files}}
+        files: ${{steps.required-files.outputs.only_deleted}}
         
