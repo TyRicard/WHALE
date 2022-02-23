@@ -33,15 +33,11 @@ jobs:
     - name: Get Files that cannot be deleted
       id: required-files
       uses: tj-actions/changed-files@v16
-      with:
-        files: |
-          build.sbt
-          project/plugins.sbt
     
     - name: Check for Deleted Files
-      if: steps.required-files.outputs.only_deleted == 'true'
+      if: steps.required-files.outputs.other_deleted_files == ''
       run: |
-        exit 0
+        exit 1
 
     - name: Create Deleted File String
       id: string-files
