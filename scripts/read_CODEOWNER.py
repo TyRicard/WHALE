@@ -7,9 +7,9 @@ import re
 def main():
     args = sys.argv[1:]
     output = []
+    f = open("../.github/CODEOWNERS", "w")
 
     for file_name in args:
-        f = open(file_name, "r")
         pattern = re.compile(file_name)
         lines = f.readlines()
 
@@ -17,6 +17,8 @@ def main():
             if pattern.match(l) is not None:
                 output.append(file_name)
                 break
+                
+    f.close()
     return output
 
 if __name__ == "__main__":
