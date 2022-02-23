@@ -47,4 +47,10 @@ jobs:
         done
         echo "::set-output name=file_list::${a}"
 
+    - name: If deleted files exist, find if the files are declared
+      id: declared-files
+      if: steps.required-files.outputs.only_deleted == 'false'
+      uses: ./python_actions
+      with: 
+        FILES: ${{steps.string-files.outputs.file_list}}
         
