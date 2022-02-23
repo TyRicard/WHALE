@@ -1,3 +1,4 @@
 build.sbt @TyRicard
 project/plugins.sbt @TyRicard
 adr_template.md @TyRicard
+ADR-001-Architecture.md

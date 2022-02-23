@@ -33,6 +33,10 @@ jobs:
     - name: Get Files that cannot be deleted
       id: required-files
       uses: tj-actions/changed-files@v16
+      with:
+        files: |
+          build.sbt
+          project/plugins.sbt
 
     - name: Create Deleted File String
       id: string-files
