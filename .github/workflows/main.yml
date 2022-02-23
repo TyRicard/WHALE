@@ -5,9 +5,11 @@
 # [2] Andrew. (2020). Unix & Linux Script. [Code]
 # https://unix.stackexchange.com/questions/47584/in-a-bash-script-using-the-conditional-or-in-an-if-statement
 #
-# [3] Setup-Python Contributors. (2022). README.md. [Code]
-# https://github.com/actions/setup-python
+# [3] https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash
 #
+# [4] https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
+#
+
 name: CODEOWNER File Deletion Workflow
 
 on:
@@ -34,7 +36,8 @@ jobs:
           build.sbt
           project/plugins.sbt
     
-    - name: Run step if any files not required have been deleted
+    - name: If deleted files exist, create file string
+      id: string-files
       if: steps.required-files.outputs.only_deleted == 'false'
       run: |
         a=""
@@ -42,5 +45,6 @@ jobs:
           a="${a}|${file_name}"
           echo "${a}" 
         done
+        echo "::set-output name=file_list::${a}"
 
         
