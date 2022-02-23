@@ -63,7 +63,7 @@ jobs:
         FILES: ${{steps.string-files.outputs.file_list}}
 
     - name: Create Issue if Required
-      if: steps.declared-files.outputs.deletion_list != ""
+      if: steps.declared-files.outputs.deletion_list != ''
       uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
