@@ -14,6 +14,7 @@ def main():
     file_str = os.getenv('INPUT_FILES')
     files = file_str.split('|')
     files = files[1:]
+    print(files)
     r = open("/CI_CODEOWNERS", "r")
 
     for file_name in files:
@@ -41,6 +42,7 @@ def main():
             iterator = iterator + 1
 
     print("::set-output name=deletion_list::" + ret_str)
+    print(ret_str)
     return ret_str
 
 if __name__ == "__main__":

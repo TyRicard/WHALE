@@ -33,11 +33,6 @@ jobs:
     - name: Get Files that cannot be deleted
       id: required-files
       uses: tj-actions/changed-files@v16
-    
-    - name: Check for Deleted Files
-      if: steps.required-files.outputs.other_deleted_files == ''
-      run: |
-        exit 0
 
     - name: Create Deleted File String
       id: string-files
