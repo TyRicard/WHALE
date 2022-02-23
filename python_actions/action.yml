@@ -9,12 +9,11 @@ author: "TyRicard@github.com"
 inputs:
   FILE_ARRAY:
     description: "These are the files that were deleted."
-    default: []
+    required: true
 
 outputs:
   deletion_list:
     description: "These are the files that were deleted and are in CODEOWNERS."
-    default: {"files": []}
 
 runs:
   using: "docker"
