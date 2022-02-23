@@ -36,7 +36,7 @@ jobs:
     
     - name: Run step if any files not required have been deleted
       if: steps.required-files.outputs.only_deleted == 'false'
-      uses: ./python_actions
-      with:
-        files: ${{steps.required-files.outputs.only_deleted}}
+      run: |
+        echo ${{steps.required-files.outputs.deleted}}
+
         
