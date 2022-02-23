@@ -42,6 +42,7 @@ def main():
             iterator = iterator + 1
 
     print("::set-output name=deletion_list::" + ret_str)
+    print(ret_str)
     return ret_str
 
 if __name__ == "__main__":
