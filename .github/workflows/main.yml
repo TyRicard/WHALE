@@ -37,7 +37,7 @@ jobs:
     - name: Check for Deleted Files
       if: steps.required-files.outputs.other_deleted_files == ''
       run: |
-        exit 1
+        exit 0
 
     - name: Create Deleted File String
       id: string-files
