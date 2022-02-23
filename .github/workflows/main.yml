@@ -69,7 +69,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FILE_MESSAGE: ${{steps.declared-files.outputs.deletion_list}}
         COMMIT_URL: ${{github.event.push.compare}}
-        COMMIT_TIME: ${{github.event.push.commits}
+        COMMIT_TIME: ${{github.event.push.commits}}
       with:
         update_existing: false
         
