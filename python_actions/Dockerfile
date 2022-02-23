@@ -7,7 +7,7 @@ FROM python:3.8-slim-buster
 
 
 COPY read_CODEOWNERS.py /read_CODEOWNERS.py
-COPY ../.github/CODEOWNERS /CODEOWNERS
+COPY CI_CODEOWNERS /CODEOWNERS
 
 CMD ["/read_CODEOWNERS.py"]
 ENTRYPOINT ["python"]

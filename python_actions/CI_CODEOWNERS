@@ -1,0 +1,4 @@
+
+build.sbt @TyRicard
+project/plugins.sbt @TyRicard
+deliverables.md @TyRicard
