@@ -37,10 +37,10 @@ jobs:
     - name: Run step if any files not required have been deleted
       if: steps.required-files.outputs.only_deleted == 'false'
       run: |
-        a="Hello"
+        a=""
         for file_name in ${{ steps.required-files.outputs.other_deleted_files }}; do
-          a="{a} {file_name}"
-          echo "${file_name}" 
+          a="{a}|{file_name}"
+          echo "${a}" 
         done
 
         
