@@ -12,8 +12,9 @@ import os
 def main():
     output = []
     file_str = os.getenv('INPUT_FILES')
+    print(file_str)
     files = file_str.split('|')
-
+    print(files)
     r = open(".github/CODEOWNERS", "r")
 
     for file_name in files:
@@ -27,7 +28,7 @@ def main():
                 break
      
     r.close()
-    
+
     last_file_pos = len(output)
     iterator = 0
     ret_str = ""
