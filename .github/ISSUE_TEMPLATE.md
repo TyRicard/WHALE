@@ -1,5 +1,5 @@
 ---
-title: Update CI_CODEOWNERS & CODEOWNERS {{ date | date('dddd, MMMM Do') }}
+title: Update CI_CODEOWNERS & CODEOWNERS {{ date | date('dddd, MMMM Do YYYY, h:mm a') }}
 assignees: TyRicard
 ---
 {{env.FILE_MESSAGE}} 
