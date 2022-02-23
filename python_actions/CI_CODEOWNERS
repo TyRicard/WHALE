@@ -1,5 +1,3 @@
 build.sbt @TyRicard
 project/plugins.sbt @TyRicard
-deliverables.md @TyRicard
-contributions.md @TyRicard
-ex10_marks.md @TyRicard
+adr_template.md @TyRicard
