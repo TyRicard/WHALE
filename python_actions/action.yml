@@ -19,4 +19,4 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - FILE_ARRAY
+    - ${FILE_ARRAY}
