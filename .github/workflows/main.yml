@@ -71,6 +71,7 @@ jobs:
         COMMIT_URL: ${{github.event.pull_request.compare}}
         COMMIT_TIME: ${{github.event.pull_request.commits}}
       with:
-        update_existing: false
+        update_existing: true
+        search_existing: open
         
         
