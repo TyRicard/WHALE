@@ -22,14 +22,15 @@ def main():
 
         for l in lines:
             if pattern.match(l) is not None:
+                print(output)
                 output.append(file_name)
                 break
      
     r.close()
-
+    
     last_file_pos = len(output)
     iterator = 0
-    ret_str = "The following files are to be removed from CI_CODEOWNERS and CODEOWNERS:"
+    ret_str = ""
     for file_name in output:
         if last_file_pos == iterator:
             ret_str = ret_str + file_name + "."
