@@ -27,9 +27,15 @@ def main():
      
     r.close()
 
-    ret_str = "The required strings are the following: \n"
+    last_file_pos = len(output)
+    iterator = 0
+    ret_str = "The following files are to be removed from CI_CODEOWNERS and CODEOWNERS:"
     for file_name in output:
-        ret_str = ret_str + file_name + "\n"
+        if last_file_pos == iterator:
+            ret_str = ret_str + file_name + "."
+        else:
+            ret_str = ret_str + file_name + ", "
+        iterator = iterator + 1
 
     print("::set-output name=deletion_list::" + ret_str)
     return ret_str
