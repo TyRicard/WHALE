@@ -9,6 +9,10 @@
 #
 # [4] https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
 #
+# [5] https://github.com/JasonEtco/create-an-issue
+#
+# [6] https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push
+
 
 name: CODEOWNER File Deletion Workflow
 
@@ -36,9 +40,13 @@ jobs:
           build.sbt
           project/plugins.sbt
     
-    - name: If deleted files exist, create file string
+    - name: Check for Deleted Files
+      if: steps.required-files.outputs.only_deleted == 'true'
+      run: |
+        exit 0
+
+    - name: Create Deleted File String
       id: string-files
-      if: steps.required-files.outputs.only_deleted == 'false'
       run: |
         a=""
         for file_name in ${{ steps.required-files.outputs.other_deleted_files }}; do
@@ -47,16 +55,21 @@ jobs:
         done
         echo "::set-output name=file_list::${a}"
 
-    - name: If deleted files exist, find if the files are declared
+    - name: Find if Deleted Files are in CODEOWNERS
       id: declared-files
-      if: steps.required-files.outputs.only_deleted == 'false'
       uses: ./python_actions
       with: 
         FILES: ${{steps.string-files.outputs.file_list}}
 
-    
-    - name: If deleted files exist, create issue
-      if: steps.required-files.outputs.only_deleted == 'false'
-      run:
-        echo "${{steps.declared-files.outputs.deletion_list}}"
+    - name: Create Issue if Required
+      if: steps.declared-files.outputs.deletion_list != ""
+      uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        FILE_MESSAGE: ${{steps.declared-files.outputs.deletion_list}}
+        COMMIT_URL: ${{github.event.push.compare}}
+        COMMIT_TIME: ${{github.event.push.commits[][timestamp]}}
+      with:
+        update_existing: false
+        
         

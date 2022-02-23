@@ -27,15 +27,18 @@ def main():
      
     r.close()
 
-    last_file_pos = len(output)
+    num_files = len(output)
     iterator = 0
-    ret_str = ""
-    for file_name in output:
-        if last_file_pos == iterator:
-            ret_str = ret_str + file_name + "."
-        else:
-            ret_str = ret_str + file_name + ", "
-        iterator = iterator + 1
+    if num_files == 0:
+        ret_str = ""
+    else:
+        ret_str = "The following files are to be removed from CI_CODEOWNERS (CI workflow file) and CODEOWNERS: "
+        for file_name in output:
+            if iterator == num_files - 1:
+                ret_str = ret_str + file_name + "."
+            else:
+                ret_str = ret_str + file_name + ", "
+            iterator = iterator + 1
 
     print("::set-output name=deletion_list::" + ret_str)
     return ret_str
