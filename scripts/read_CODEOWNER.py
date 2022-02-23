@@ -7,6 +7,7 @@ import re
 def main():
     args = sys.argv[1:]
     output = []
+    print("Does this happen")
     f = open(".github/CODEOWNERS", "r")
 
     for file_name in args:
