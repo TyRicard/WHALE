@@ -1,7 +1,6 @@
 ---
 title: Update CI_CODEOWNERS & CODEOWNERS {{ date | date('dddd, MMMM Do') }}
 assignees: TyRicard
-labels: "Status: To do"
 ---
 {{env.FILE_MESSAGE}} 
 
