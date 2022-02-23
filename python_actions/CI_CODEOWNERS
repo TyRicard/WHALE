@@ -1,4 +1,5 @@
 build.sbt @TyRicard
 project/plugins.sbt @TyRicard
 deliverables.md @TyRicard
-contributions.md @TyRicards
+contributions.md @TyRicard
+ex10_marks.md @TyRicard

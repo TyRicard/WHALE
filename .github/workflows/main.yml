@@ -14,7 +14,7 @@
 # [6] https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push
 
 
-name: CODEOWNER File Deletion Workflow
+name: Read CODEOWNERS and determine if issue is required
 
 on:
   push:
@@ -22,7 +22,7 @@ on:
 
 jobs:
 
-  check_for_file_delete:
+  read_CODEOWNERS_File:
     runs-on: ubuntu-latest
 
     steps:
