@@ -1,5 +1,7 @@
 build.sbt @TyRicard
 project/plugins.sbt @TyRicard
 deliverables.md @TyRicard
+test1.txt @TyRicard
+test2.txt @TyRicard
 test3.txt @TyRicard
 test4.txt @TyRicard
