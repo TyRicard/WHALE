@@ -16,20 +16,18 @@ def main():
     file_str = os.getenv('INPUT_FILES')
     files = file_str.split('|')
     files = files[1:]
-    print(files)
-    r = open("/CI_CODEOWNERS", "r")
-    i = 0
+
     for file_name in files:
+        r = open("/CI_CODEOWNERS", "r")
+        pattern = re.compile(file_name)
         lines = r.readlines()
 
         for l in lines:
-            if re.match(file_name, l) is not None:
+            if pattern.match(l) is not None:
                 output.append(file_name)
-                print(file_name)
-                i = i + 1
                 break
-     
-    r.close()
+        r.close()
+        
 
     num_files = len(output)
     iterator = 0
