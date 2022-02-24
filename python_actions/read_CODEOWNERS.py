@@ -20,13 +20,10 @@ def main():
     r = open("/CI_CODEOWNERS", "r")
     i = 0
     for file_name in files:
-        print(i)
-        pattern = re.compile(file_name)
         lines = r.readlines()
-        print(pattern)
+
         for l in lines:
-            if pattern.match(l) is not None:
-                print(pattern.match(l))
+            if re.match(file_name, l) is not None:
                 output.append(file_name)
                 print(file_name)
                 i = i + 1
