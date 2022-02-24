@@ -1,6 +1,6 @@
 # The following source was used in creating this action:
 # [1] GitHub Actions Contributors. "Create Dockerfile". (2022).
-# Available: It was the code used for the second lab.
+# Available: Used the Repository Contents from the second lab.
 
 name: "Read CODEOWNERS for Deleted Files"
 description: "This action reads the CODEOWNERS"

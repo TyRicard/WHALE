@@ -1,8 +1,4 @@
 build.sbt @TyRicard
 project/plugins.sbt @TyRicard
-adr_template.md @TyRicard
-ADR-001-Architecture.md @TyRicard
-ADR-002-Front-End.md @TyRicard
-README.md @TyRicard
-test/controllers/APITest.java @TyRicard
-test/controllers/ParentControllerTest.java @TyRicard
+test1.txt @TyRicard
+test2.txt @TyRicard

@@ -1,17 +1,21 @@
 # The following sources were used:
 # [1] tj-actions. (2022). README.md. [Code] 
-# https://github.com/tj-actions/changed-files
+# Available: https://github.com/tj-actions/changed-files
 #
 # [2] Andrew. (2020). Unix & Linux Script. [Code]
-# https://unix.stackexchange.com/questions/47584/in-a-bash-script-using-the-conditional-or-in-an-if-statement
+# Available: https://unix.stackexchange.com/questions/47584/in-a-bash-script-using-the-conditional-or-in-an-if-statement
 #
-# [3] https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash
+# [3] A. Rao. (2010). "How to concatenate string variables in Bash"
+# [Code]. Available: https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash
 #
-# [4] https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
+# [4] Github Contributors. "Workflow commands for GitHub Actions." 
+# docs.github.com. Available: https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
 #
-# [5] https://github.com/JasonEtco/create-an-issue
+# [5] J. Etco. README.md. [Code].
+# Available: https://github.com/JasonEtco/create-an-issue
 #
-# [6] https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push
+# [6] Gitbub Contribuots. "Webhook Payload Object" docs.github.com.
+# Available: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push
 
 
 name: Read CODEOWNERS and determine if issue is required

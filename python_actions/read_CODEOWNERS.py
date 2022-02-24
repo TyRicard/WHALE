@@ -5,9 +5,11 @@ import os
 # [1] Python Contributors. "Regular expression operations." docs.python.org.
 #     Available: https://docs.python.org/3/library/re.html
 # 
-# [2] https://able.bio/rhett/how-to-set-and-get-environment-variables-in-python--274rgt5
+# [2] R. Trickett. "How to Set and Get Environment Variables in Python." able.bio.
+#     (2019). Available: https://able.bio/rhett/how-to-set-and-get-environment-variables-in-python--274rgt5
 #
-# [3] https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
+# [3] Github Contributors. "Create a Docker container action." 
+#     docs.github.com. Available: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
 
 def main():
     output = []
