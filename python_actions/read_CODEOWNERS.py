@@ -18,15 +18,18 @@ def main():
     files = files[1:]
     print(files)
     r = open("/CI_CODEOWNERS", "r")
-
+    i = 0
     for file_name in files:
+        print(i)
         pattern = re.compile(file_name)
         lines = r.readlines()
-
+        print(pattern)
         for l in lines:
             if pattern.match(l) is not None:
+                print(pattern.match(l))
                 output.append(file_name)
                 print(file_name)
+                i = i + 1
                 break
      
     r.close()
