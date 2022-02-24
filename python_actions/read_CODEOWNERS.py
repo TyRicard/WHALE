@@ -16,7 +16,7 @@ def main():
     file_str = os.getenv('INPUT_FILES')
     files = file_str.split('|')
     files = files[1:]
-    
+    print(files)
     r = open("/CI_CODEOWNERS", "r")
 
     for file_name in files:
@@ -26,6 +26,7 @@ def main():
         for l in lines:
             if pattern.match(l) is not None:
                 output.append(file_name)
+                print(file_name)
                 break
      
     r.close()
